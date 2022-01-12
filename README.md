@@ -1,1 +1,1 @@
-# QR-code-scanner-in-Jetpack-Compose
+# QR code scanner in Jetpack Compose
