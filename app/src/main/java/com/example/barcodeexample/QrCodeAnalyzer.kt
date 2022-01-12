@@ -19,11 +19,10 @@ class QrCodeAnalyzer(
 
     override fun analyze(image: ImageProxy) {
         checkValidImageFormat(image)
-
     }
 
     private fun checkValidImageFormat(image: ImageProxy) {
-        if (image.format in supportedImageFormats){
+        if (image.format in supportedImageFormats) {
             val bytes = image.planes.first().buffer.toByteArray()
             val source = PlanarYUVLuminanceSource(
                 bytes,
@@ -47,7 +46,7 @@ class QrCodeAnalyzer(
                     )
                 }.decode(binaryBmp)
                 onQrCodeScanned(result.text)
-            } catch (e:Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             } finally {
                 image.close()
@@ -55,7 +54,7 @@ class QrCodeAnalyzer(
         }
     }
 
-    private fun ByteBuffer.toByteArray(): ByteArray{
+    private fun ByteBuffer.toByteArray(): ByteArray {
         rewind()
         return ByteArray(remaining()).also {
             get(it)
