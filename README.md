@@ -1,4 +1,4 @@
-# QR-code-scanner-in-Jetpack-Compose
+# QR code scanner in Jetpack Compose
 This is QRcode scanner sample theme applied using compose.
 
 
